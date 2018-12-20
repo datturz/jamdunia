@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <table>
+            <tr>
+                <th colspan="2">Jam DUNIA</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td id="jam0"></td>
+                <td>London</td>
+            </tr>
+            <tr>
+                <td id="jam1"></td>
+                <td>Paris</td>
+            </tr>
+            <tr>
+                <td id="jam2"></td>
+                <td>Instanbul</td>
+            </tr>
+            <tr>
+                <td id="jam3"></td>
+                <td>Moskow</td>
+            </tr>
+            <tr>
+                <td id="jam4"></td>
+                <td>Abu Dhabi</td>
+            </tr>
+            <tr>
+                <td id="jam5"></td>
+                <td>islamabad</td>
+            </tr>
+            <tr>
+                <td id="jam6"></td>
+                <td>Astana</td>
+            </tr>
+            <tr>
+                <td id="jam7"></td>
+                <td>Jakarta</td>
+            </tr>
+            <tr>
+                <td id="jam8"></td>
+                <td>Beijing</td>
+            </tr>
+            <tr>
+                <td id="jam9"></td>
+                <td>Tokyo</td>
+            </tr>
+        </table>
+
+        <h1>Selisih Antar zona Adalah = 1 Jam , 1 Menit, 1 Detik</h1>
+    </center>
+    <script>
+        setInterval(
+            () => {
+                var waktu = new Date()
+
+                for (i = 0; i < 10; i++) {
+                    jam = waktu.getUTCHours() + i
+                    menit = waktu.getUTCMinutes() + i
+                    detik = waktu.getUTCSeconds() + i
+                    noljam = ''
+                    nolmenit = ''
+                    noldetik = ''
+                    // jamm = waktu.setUTCHours(jam + i)
+                    // menitt = waktu.setUTCMinutes(menit + i)
+                    // detikk = waktu.setUTCSeconds(detik + i)
+                    // jamm = jam + i
+                    // menitt = menit + i
+                    // detikk = detik + i
+                    if (jam <= 9) { noljam = '0' }
+                    if (menit <= 9) { nolmenit = '0' }
+                    if (detik <= 9) {
+                        noldetik = '0'
+                    }
+                    // document.getElementById("jam" + i).innerHTML = `${waktu.getUTCHours(jam)}:${waktu.getUTCMinutes()}:${waktu.getUTCSeconds()}*  GMT + ` + i
+                    document.getElementById("jam" + i).innerHTML = noljam + jam + ':' + nolmenit + menit + ':' + noldetik + detik + ' GMT' + '+' + i
+                }
+            },
+            1000
+        )
+    </script>
